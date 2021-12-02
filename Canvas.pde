@@ -67,6 +67,5 @@ class Canvas {
 
   void drawShape () {
     shape(contour);
-
   }
 }
