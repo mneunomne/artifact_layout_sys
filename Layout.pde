@@ -42,7 +42,6 @@ class Layout {
         
       }
     }
-    println("positions", positions);
   }
   
   void display () {

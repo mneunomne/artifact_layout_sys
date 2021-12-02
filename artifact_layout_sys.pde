@@ -1,10 +1,11 @@
 // Artifact Layout System
 
 import http.requests.*;
+import blobDetection.*;
 
 PandemicArchiveOfVoices archive = new PandemicArchiveOfVoices();
 
-PGraphics canvas;
+Canvas canvas;
 
 Layout layout; 
 
@@ -19,29 +20,20 @@ void setup () {
   println("audioText length", audioText.length());
 
   
-  PGraphics pg = createGraphics(width, height); 
-  
-  pg.beginDraw();
-  // background always dark
-  pg.background(0);
-  pg.fill(255);
-  pg.stroke(255);
-  pg.ellipse(width/2, height/2, width, height);
-  //pg.rect(100, 100, 600,600);
-  pg.endDraw();
-  
+  canvas = new Canvas();
+
   font = createFont("Arial",32,true);
   textFont(font);
   textSize(7);
   textAlign(CENTER);
   
-  layout = new Layout(audioText, pg);
+  // layout = new Layout(audioText, pg);
   
-  layout.calculate();
+  // layout.calculate();
   
-  layout.display();
+  // layout.display();
 
-  saveFrame("layout.png");
+  // saveFrame("layout.png");
   
   //textSize(9);
   //text(audioText, 0, 0, width, height);
