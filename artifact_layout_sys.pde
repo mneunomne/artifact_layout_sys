@@ -3,6 +3,9 @@
 import http.requests.*;
 import blobDetection.*;
 
+import gab.opencv.*;
+OpenCV opencv;
+
 PandemicArchiveOfVoices archive = new PandemicArchiveOfVoices();
 
 Canvas canvas;
@@ -14,32 +17,21 @@ String audioText;
 PFont font; 
 
 void setup () {
-  size(800, 800, P2D);
+  size(1920, 1080, P3D);
   background(0);
   audioText = archive.getAudioAsText(91);
   println("audioText length", audioText.length());
 
-  
-  canvas = new Canvas();
-
   font = createFont("Arial",32,true);
-  textFont(font);
-  textSize(7);
-  textAlign(CENTER);
-  
-  // layout = new Layout(audioText, pg);
-  
-  // layout.calculate();
-  
-  // layout.display();
 
-  // saveFrame("layout.png");
-  
-  //textSize(9);
-  //text(audioText, 0, 0, width, height);
-  // println("audioText", audioText);
+  canvas = new Canvas(this);
 }
 
 void draw() {
+  background(0);
+  translate(0, 0, 0);
   // layout.display();
+  canvas.display();
+
+  camera(mouseX, height/2, (height/2) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
 }

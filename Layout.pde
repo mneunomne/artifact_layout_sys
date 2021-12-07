@@ -53,9 +53,12 @@ class Layout {
       noFill();
       rect(p.x, p.y, boxW, boxW);
       print(Character.toString(text.charAt(index)));
-      text(Character.toString(text.charAt(index)), p.x, p.y, boxW, boxW); 
-      index++;
+      if (index < audioText.length()) {
+        text(Character.toString(text.charAt(index)), p.x, p.y, boxW, boxW); 
+        index++;
+      }
     }
+
     
   }
 }
