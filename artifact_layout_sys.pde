@@ -33,5 +33,9 @@ void draw() {
   // layout.display();
   canvas.display();
 
-  camera(mouseX, height/2, (height/2) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
+  camera(mouseX, height/2, (mouseY+100) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
+}
+
+void keyPressed() {
+  if (key == 'k') saveFrame("frame-####.png");
 }

@@ -112,10 +112,11 @@ class Canvas {
   }
 
   void display () {
+    //lights();
     pushMatrix();
-      noFill();
-      stroke(255, 0, 0);
-      translate(width/2, height/2, -20);
+      fill(10);
+      stroke(10);
+      translate(width/2, height/2, -21);
       box(w, h, 40);
     popMatrix();
     
